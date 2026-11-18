@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Malka Hans Digital Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--tx:#0f1b33;--mu:#5d6b85;--navy:#0b1f4a;--bl:#1d5fd6;--bd:#dfe6f2;--rd:#d93a3a;--gr:#16955c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a1226;--card:#121c38;--tx:#e8eefc;--mu:#93a1c2;--bd:#233157}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--tx);display:flex;min-height:100vh}
+nav{width:210px;background:var(--navy);color:#fff;padding:14px 8px;flex-shrink:0}
+nav h1{font-size:15px;margin:4px 8px 14px;line-height:1.3}
+nav button{display:block;width:100%;text-align:left;background:none;border:0;color:#c5d3f2;padding:10px;border-radius:8px;font-size:14px;cursor:pointer}
+nav button.on,nav button:hover{background:var(--bl);color:#fff}
+main{flex:1;padding:16px;min-width:0}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:14px}
+.s b{display:block;font-size:22px;color:var(--bl)}.s span{font-size:12px;color:var(--mu)}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}th{color:var(--mu);font-weight:600}
+input,select,textarea{width:100%;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+label{font-size:12px;color:var(--mu);display:block}
+.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+button.b{background:var(--bl);color:#fff;border:0;padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit;font-size:13px}
+button.b.r{background:var(--rd)}button.b.o{background:none;color:var(--bl);border:1px solid var(--bl)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}.bar input,.bar select{width:auto;flex:1;min-width:120px}
+.pill{padding:2px 8px;border-radius:99px;font-size:11px;background:var(--bd)}.red{color:var(--rd);font-weight:600}.grn{color:var(--gr)}
+.chart{display:flex;align-items:flex-end;gap:6px;height:130px}.chart div{flex:1;text-align:center;font-size:10px;color:var(--mu)}.chart i{display:block;background:var(--bl);border-radius:4px 4px 0 0}
+@media(max-width:700px){body{flex-direction:column}nav{position:fixed;bottom:0;left:0;right:0;width:100%;z-index:20;display:flex;overflow-x:auto;gap:2px;padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px));box-shadow:0 -2px 10px rgba(0,0,0,.25)}nav h1{display:none}nav button{width:auto;flex:0 0 auto;white-space:nowrap;padding:9px 11px;font-size:12px;text-align:center}main{padding:10px 10px 84px}h2{font-size:18px;margin:6px 0 10px}.g{grid-template-columns:repeat(2,1fr);gap:8px}.s b{font-size:18px}.f{grid-template-columns:1fr}input,select,textarea{font-size:16px}.bar>*{flex:1 1 100%}.bar button,button.b{min-height:38px}table:not(.ag),table:not(.ag) tbody,table:not(.ag) tr,table:not(.ag) td{display:block;width:100%}table:not(.ag) tr:first-child{display:none}table:not(.ag) tr{border:1px solid var(--bd);border-radius:10px;margin-bottom:8px;padding:6px 10px}table:not(.ag) td{display:flex;justify-content:space-between;gap:10px;border:0;padding:4px 0;white-space:normal;text-align:right;align-items:center}table:not(.ag) td::before{content:attr(data-l);color:var(--mu);font-weight:600;text-align:left}.c .ag button{width:32px;height:32px}.c .ag td:first-child,.c .ag th:first-child{max-width:84px;min-width:84px;white-space:normal;font-size:11px;word-break:break-word}.chart{height:110px}}
+.ag td,.ag th{padding:3px;text-align:center}.ag td:first-child,.ag th:first-child{text-align:left;position:sticky;left:0;background:var(--card)}.ag button{width:26px;height:26px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);cursor:pointer;font-size:12px;padding:0}.ag .P{background:var(--gr);color:#fff}.ag .A{background:var(--rd);color:#fff}.ag .L{background:#e0a100;color:#fff}.ag th{cursor:pointer}
+@media print{nav,.np{display:none!important}body{background:#fff;color:#000}}
+</style><script src="/_aistudio-iframe.js?v=29045eb3"></script><script>
+(function () {
+  if (window.claude && typeof window.claude.use === 'function') return;
+  var memStore = {};
+  function readCol(col) {
+    try {
+      var raw = window.localStorage.getItem('offline_db_' + col);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return memStore[col] || {};
+    }
+  }
+  function writeCol(col, data) {
+    memStore[col] = data;
+    try {
+      window.localStorage.setItem('offline_db_' + col, JSON.stringify(data));
+    } catch (e) {}
+  }
+  var listeners = {};
+  function notify(col) {
+    var map = readCol(col);
+    var docs = Object.keys(map).map(function (id) {
+      var record = Object.assign({}, map[id]);
+      return {
+        id: id,
+        data: function () { return Object.assign({}, record); }
+      };
+    });
+    var snap = { docs: docs, size: docs.length };
+    (listeners[col] || []).forEach(function (cb) {
+      try { cb(snap); } catch (err) {}
+    });
+  }
+  var dbApi = {
+    collection: function (col) {
+      return {
+        onSnapshot: function (cb) {
+          listeners[col] = listeners[col] || [];
+          listeners[col].push(cb);
+          setTimeout(function () { notify(col); }, 0);
+          return function () {
+            listeners[col] = (listeners[col] || []).filter(function (f) { return f !== cb; });
+          };
+        },
+        doc: function (id) {
+          return {
+            set: function (data) {
+              var map = readCol(col);
+              map[id] = Object.assign({}, data);
+              writeCol(col, map);
+              notify(col);
+              return Promise.resolve();
+            },
+            update: function (patch) {
+              var map = readCol(col);
+              map[id] = Object.assign({}, map[id] || {}, patch);
+              writeCol(col, map);
+              notify(col);
+              return Promise.resolve();
+            },
+            delete: function () {
+              var map = readCol(col);
+              delete map[id];
+              writeCol(col, map);
+              notify(col);
+              return Promise.resolve();
+            }
+          };
+        }
+      };
+    }
+  };
+  var downloadsApi = {
+    save: function (opts) {
+      try {
+        var blob = new Blob([opts.data || ''], { type: 'text/csv;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = opts.filename || 'export.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        return Promise.resolve(true);
+      } catch (e) {
+        return Promise.resolve(false);
+      }
+    }
+  };
+  window.claude = {
+    use: function (name) {
+      if (name === 'db') return Promise.resolve(dbApi);
+      if (name === 'downloads') return Promise.resolve(downloadsApi);
+      return Promise.resolve(null);
+    }
+  };
+})();
+</script>
+</head><body>
+<nav id="nav"><h1>🎓 Malka Hans<br>Digital Academy</h1></nav><main id="m"><div class="c">Loading… (sign in to the artifact to use the database)</div></main>
+<script>
+const $=s=>document.querySelector(s),T=()=>new Date().toISOString().slice(0,10),N=x=>+x||0,Rs=x=>'Rs '+N(x).toLocaleString('en-PK');
+const E=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const D={students:[],courses:[],payments:[],expenses:[],attendance:[]};let db=null,tab='dash',view=null,q='';
+const TABS=[['dash','📊 Dashboard'],['stu','👩‍🎓 Students'],['crs','📚 Courses'],['att','✅ Attendance'],['fee','💰 Fees'],['pen','⏳ Pending'],['exp','🧾 Expenses'],['rep','📑 Reports']];
+const DEF=[['Computer Course',3],['__skip',0],['Video Editing',1],['Cartoon & AI Creation',1],['Software Development',1],['Website Development',1],['YouTube Automation',3],['Facebook Automation',3],['TikTok Automation',3]];
+function nav(){$('#nav').innerHTML='<h1>🎓 Malka Hans<br>Digital Academy</h1>'+TABS.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('')}
+function go(t,v){tab=t;view=v||null;q='';nav();R();document.querySelector('nav .on')?.scrollIntoView({inline:'center',block:'nearest'})}
+async function save(col,id,data){try{await db.collection(col).doc(id).set(data)}catch(e){alert('Save failed: '+(e.message||e.code))}}
+async function del(col,id){if(confirm('Delete this record?'))try{await db.collection(col).doc(id).delete()}catch(e){alert('Failed: '+e.message)}}
+const crs=id=>D.courses.find(c=>c.id==id)||{};const stu=id=>D.students.find(s=>s.id==id)||{};
+const fin=s=>{const c=crs(s.course);return Math.max(0,N(s.fee??c.fee)-N(s.discount))};
+const paid=id=>D.payments.filter(p=>p.sid==id).reduce((a,p)=>a+N(p.amount),0);
+const rem=s=>fin(s)-paid(s.id);
+const lastPay=id=>D.payments.filter(p=>p.sid==id).map(p=>p.date).sort().pop()||'—';
+const addMonths=(d,m)=>{if(!d)return'';const x=new Date(d);x.setMonth(x.getMonth()+N(m));return x.toISOString().slice(0,10)};
+function nextId(col,pre,w){const n=D[col].map(r=>N(String(r.id).replace(/\D/g,''))).reduce((a,b)=>Math.max(a,b),0)+1;return pre+String(n).padStart(w,'0')}
+function table(h,rows){return `<div class="w"><table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((x,i)=>`<td data-l="${E(h[i])}">${x}</td>`).join('')}</tr>`).join('')||`<tr><td colspan="${h.length}">No records yet.</td></tr>`}</table></div>`}
+function exportXls(name,h,rows){const csv=[h,...rows].map(r=>r.map(x=>'"'+String(x).replace(/<[^>]*>/g,'').replace(/"/g,'""')+'"').join(',')).join('\n');
+ claude.use('downloads').then(d=>d?d.save({filename:name+'.csv',data:'\ufeff'+csv}):alert('Download unavailable'))}
+function R(){const m=$('#m');({dash,stu:students,crs:courses,att:attMonth,fee:fees,pen:pending,exp:expenses,rep:reports})[tab](m)}
+function dash(m){const S=D.students,t=T(),mo=t.slice(0,7);
+ const tp=D.payments.reduce((a,p)=>a+N(p.amount),0),pend=S.reduce((a,s)=>a+Math.max(0,rem(s)),0);
+ const ta=D.attendance.filter(a=>a.date==t),mi=D.payments.filter(p=>p.date.startsWith(mo)).reduce((a,p)=>a+N(p.amount),0);
+ const cards=[['Total Students',S.length],['Active',S.filter(s=>s.status=='Active').length],['Completed',S.filter(s=>s.status=='Completed').length],['Courses',D.courses.length],['Today Present',ta.filter(a=>a.st=='Present').length],['Today Absent',ta.filter(a=>a.st=='Absent').length],['Fees Collected',Rs(tp)],['Pending Fees',Rs(pend)],['Monthly Income',Rs(mi)]];
+ const ms=[...Array(6)].map((_,i)=>{const d=new Date();d.setMonth(d.getMonth()-5+i);return d.toISOString().slice(0,7)}),vals=ms.map(k=>D.payments.filter(p=>p.date.startsWith(k)).reduce((a,p)=>a+N(p.amount),0)),mx=Math.max(...vals,1);
+ m.innerHTML=`<h2>Dashboard</h2><div class="g">${cards.map(c=>`<div class="c s"><b>${c[1]}</b><span>${c[0]}</span></div>`).join('')}</div>
+ <div class="c"><h3>Income – last 6 months</h3><div class="chart">${vals.map((v,i)=>`<div><i style="height:${v/mx*100}px"></i>${ms[i].slice(2)}<br>${v?Math.round(v/1000)+'k':''}</div>`).join('')}</div></div>
+ <div class="c"><h3>Recent Admissions</h3>${table(['ID','Name','Course','Date'],[...S].sort((a,b)=>(b.adm||'').localeCompare(a.adm||'')).slice(0,5).map(s=>[s.id,E(s.name),E(crs(s.course).name),s.adm]))}</div>
+ <div class="c"><h3>Recent Payments</h3>${table(['Receipt','Student','Amount','Date'],[...D.payments].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5).map(p=>[p.id,E(stu(p.sid).name),Rs(p.amount),p.date]))}</div>`}
+function students(m){if(view)return stuForm(m,view);
+ const L=D.students.filter(s=>(s.name+s.father+s.id+s.mobile).toLowerCase().includes(q.toLowerCase()));
+ m.innerHTML=`<h2>Students</h2><div class="bar"><input placeholder="Search name, ID, father, mobile" value="${E(q)}" oninput="q=this.value;R();this.focus()"><button class="b" onclick="go('stu','new')">+ Add Student</button><button class="b o" onclick="exportXls('students',['ID','Name','Father','Mobile','Course','Status'],D.students.map(s=>[s.id,s.name,s.father,s.mobile,crs(s.course).name,s.status]))">Export</button></div>
+ <div class="c">${table(['ID','Name','Father','Mobile','Course','Status','Total Fee','Paid','Pending',''],L.map(s=>[s.id,E(s.name),E(s.father),E(s.mobile),E(crs(s.course).name),`<span class="pill">${s.status}</span>`,Rs(fin(s)),`<span class="grn">${Rs(paid(s.id))}</span>`,`<span class="${rem(s)>0?'red':'grn'}">${Rs(rem(s))}</span>`,`<button class="b o" onclick="go('stu','p:${s.id}')">View</button> <button class="b o" onclick="go('stu','e:${s.id}')">Edit</button> <button class="b r" onclick="del('students','${s.id}')">Del</button>`]))}</div>`}
+const SF=[['name','Full Name','text'],['father','Father Name','text'],['gender','Gender','select:Male,Female'],['mobile','Mobile','tel'],['wa','WhatsApp','tel'],['city','City','text'],['address','Address','text'],['edu','Previous Education','text'],['adm','Admission Date','date'],['batch','Batch','text'],['start','Course Start Date','date'],['end','Expected Completion','date'],['status','Status','select:Active,Completed,Dropped'],['discount','Discount (Rs)','number']];
+function stuForm(m,v){if(v.startsWith('p:'))return profile(m,v.slice(2));const ed=v.startsWith('e:'),s=ed?stu(v.slice(2)):{adm:T(),start:T(),status:'Active',discount:0};
+ m.innerHTML=`<h2>${ed?'Edit':'New'} Student ${ed?s.id:''}${(window.EID=ed?s.id:null,setTimeout(calcPend),'')}</h2><div class="c"><div class="f" oninput="calcPend()">
+ ${SF.map(f=>`<div><label>${f[1]}</label>${f[2].startsWith('select')?`<select id="f_${f[0]}">${f[2].slice(7).split(',').map(o=>`<option ${s[f[0]]==o?'selected':''}>${o}</option>`).join('')}</select>`:`<input id="f_${f[0]}" type="${f[2]}" value="${E(s[f[0]]??'')}">`}</div>`).join('')}
+ <div><label>Course</label><select id="f_course" onchange="autoEnd()"><option value="">— select —</option>${D.courses.map(c=>`<option value="${c.id}" ${s.course==c.id?'selected':''}>${E(c.name)}</option>`).join('')}</select></div>
+ <div><label>Total Course Fee (Rs)</label><input id="f_fee" type="number" min="0" value="${s.fee??''}"></div><div><label>${ed?'Total Paid (add more from Fees page)':'Fee Paid Now (Rs)'}</label><input id="f_pn" type="number" min="0" value="${ed?paid(s.id):0}" ${ed?'disabled':''}></div><div><label>Payment Method</label><select id="f_pm"><option>Cash</option><option>Bank</option><option>Easypaisa</option><option>JazzCash</option></select></div><div><label>Pending Fee</label><input id="f_pend" disabled style="font-weight:700"></div><div><label>Photo</label><input type="file" id="f_photo" accept="image/*"></div></div><p><button class="b" onclick="saveStu(${ed?`'${s.id}'`:'null'})">Save</button> <button class="b o" onclick="go('stu')">Cancel</button></p>${D.courses.length?'':'<p class="red">Add courses first (Courses page).</p>'}</div>`}
+function calcPend(){if(!$('#f_fee'))return;const f=Math.max(0,N($('#f_fee').value)-N($('#f_discount').value)),p=window.EID?paid(window.EID):N($('#f_pn').value);$('#f_pend').value=Rs(f-p)+'  (Final fee '+Rs(f)+')'}
+function autoEnd(){const c=crs($('#f_course').value),s=$('#f_start').value;if(c.id){$('#f_fee').value=c.fee;if(s)$('#f_end').value=addMonths(s,c.months);calcPend()}}
+async function saveStu(id){const o={};SF.forEach(f=>o[f[0]]=$('#f_'+f[0]).value);o.course=$('#f_course').value;
+ if(!o.name.trim()||!o.father.trim()||!/^[0-9+\-\s]{10,15}$/.test(o.mobile)||!o.course)return alert('Name, Father Name, valid mobile and Course are required.');
+ if(!id&&D.students.some(s=>s.name.trim().toLowerCase()==o.name.trim().toLowerCase()&&s.father.trim().toLowerCase()==o.father.trim().toLowerCase()&&s.mobile==o.mobile))return alert('Duplicate student (same name, father and mobile).');
+ o.discount=N(o.discount);const old=id?stu(id):{};o.photo=old.photo||'';const f=$('#f_photo').files[0];
+ if(f){o.photo=await new Promise(r=>{const i=new Image,u=URL.createObjectURL(f);i.onload=()=>{const c=document.createElement('canvas');c.width=c.height=120;c.getContext('2d').drawImage(i,0,0,120,120);r(c.toDataURL('image/jpeg',.7))};i.src=u})}
+ const isNew=!id;o.fee=N($('#f_fee').value);const pn=isNew?N($('#f_pn').value):0,fn=Math.max(0,o.fee-o.discount);if(o.discount>o.fee||pn>fn||pn<0)return alert('Discount or Paid amount is more than the fee.');if(isNew)id=nextId('students','MHDA-',4);
+ await save('students',id,o);if(isNew&&pn>0){const rid=nextId('payments','RCP-',5);await save('payments',rid,{sid:id,amount:pn,date:o.adm,method:$('#f_pm').value,total:fn,before:fn});setTimeout(()=>receipt(rid),600)}go('stu')}
+function profile(m,id){const s=stu(id),c=crs(s.course),at=D.attendance.filter(a=>a.sid==id),cnt=k=>at.filter(a=>a.st==k).length,tot=at.length;
+ m.innerHTML=`<div class="np bar"><button class="b o" onclick="go('stu')">← Back</button><button class="b" onclick="print()">Print</button></div><div class="c"><h2>${s.photo?`<img src="${s.photo}" width="60" style="border-radius:50%;vertical-align:middle"> `:''}${E(s.name)} <small>${s.id}</small></h2>
+ <p>Father: ${E(s.father)} · ${s.gender} · ${E(s.mobile)} / WA ${E(s.wa)} · ${E(s.city)}, ${E(s.address)}</p>
+ <p>Education: ${E(s.edu)}</p>
+ <p>Course: <b>${E(c.name)}</b> (${c.months} month) · Batch: ${E(s.batch)} · Admission ${s.adm} · ${s.start} → ${s.end} · <span class="pill">${s.status}</span></p></div>
+ <div class="g"><div class="c s"><b>${Rs(fin(s))}</b><span>Final Fee</span></div><div class="c s"><b>${Rs(paid(id))}</b><span>Paid</span></div><div class="c s"><b class="red">${Rs(rem(s))}</b><span>Pending</span></div><div class="c s"><b>${tot?Math.round(cnt('Present')/tot*100):0}%</b><span>Attendance (P${cnt('Present')} A${cnt('Absent')} L${cnt('Leave')})</span></div></div>
+ <div class="c"><h3>Payments</h3>${table(['Receipt','Date','Method','Amount'],D.payments.filter(p=>p.sid==id).sort((a,b)=>b.date.localeCompare(a.date)).map(p=>[p.id,p.date,p.method,Rs(p.amount)]))}</div>
+ <div class="c"><h3>Attendance History</h3>${table(['Date','Status'],[...at].sort((a,b)=>b.date.localeCompare(a.date)).map(a=>[a.date,a.st]))}</div>`}
+function courses(m){const ed=view&&view!='new'?crs(view.slice(2)):null;
+ m.innerHTML=`<h2>Courses</h2><div class="bar">${D.courses.length?'':`<button class="b" onclick="loadDef()">Load the 9 academy courses</button>`}<button class="b" onclick="go('crs','new')">+ Add Course</button></div>
+ ${view?`<div class="c"><div class="f">${[['name','Course Name'],['desc','Description'],['months','Duration (months)'],['fee','Fee (Rs)'],['teacher','Teacher']].map(f=>`<div><label>${f[1]}</label><input id="c_${f[0]}" value="${E(ed?.[f[0]]??'')}"></div>`).join('')}<div><label>Start</label><input type="date" id="c_start" value="${ed?.start||''}"></div><div><label>End</label><input type="date" id="c_end" value="${ed?.end||''}"></div><div><label>Status</label><select id="c_status"><option>Active</option><option ${ed?.status=='Inactive'?'selected':''}>Inactive</option></select></div></div><p><button class="b" onclick="saveCrs('${ed?.id||''}')">Save</button> <button class="b o" onclick="go('crs')">Cancel</button></p></div>`:''}
+ <div class="c">${table(['Course','Months','Fee','Teacher','Students','Status',''],D.courses.map(c=>[E(c.name),c.months,Rs(c.fee),E(c.teacher),D.students.filter(s=>s.course==c.id).length,c.status,`<button class="b o" onclick="go('crs','e:${c.id}')">Edit</button> <button class="b r" onclick="del('courses','${c.id}')">Del</button>`]))}</div>`}
+async function loadDef(){for(const [n,mo] of DEF){if(n=='__skip')continue;await save('courses','C'+String(DEF.findIndex(d=>d[0]==n)+1).padStart(2,'0'),{name:n,desc:'Basic Computer, MS Word, MS Excel, Urdu Typing and English Typing',months:mo,fee:0,teacher:'',status:'Active',start:'',end:''})}}
+async function saveCrs(id){const o={};['name','desc','months','fee','teacher','start','end','status'].forEach(k=>o[k]=$('#c_'+k).value);if(!o.name.trim()||N(o.months)<=0)return alert('Name and duration required');o.months=N(o.months);o.fee=N(o.fee);await save('courses',id||nextId('courses','C',2),o);go('crs')}
+function attendance(m){const d=$('#ad')?.value||T(),cid=$('#ac')?.value||'';
+ const L=D.students.filter(s=>s.status=='Active'&&(!cid||s.course==cid));
+ m.innerHTML=`<h2>Attendance</h2><div class="c bar"><input type="date" id="ad" value="${d}" onchange="R()"><select id="ac" onchange="R()"><option value="">All courses</option>${D.courses.map(c=>`<option value="${c.id}" ${cid==c.id?'selected':''}>${E(c.name)}</option>`).join('')}</select></div>
+ <div class="c">${table(['Student','Today','Mark','Overall %'],L.map(s=>{const a=D.attendance.find(x=>x.id==d+'_'+s.id),all=D.attendance.filter(x=>x.sid==s.id),p=all.filter(x=>x.st=='Present').length;
+ return [E(s.name)+' <small>'+s.id+'</small>',a?a.st:'—',['Present','Absent','Leave'].map(k=>`<button class="b ${a?.st==k?'':'o'}" onclick="mark('${s.id}','${k}')">${k[0]}</button>`).join(' '),(all.length?Math.round(p/all.length*100):0)+'%']}))}</div>`}
+async function mark(sid,st){const d=$('#ad').value,id=d+'_'+sid,old=D.attendance.find(a=>a.id==id),h=[...(old?.hist||[]),{st:old?.st||null,at:new Date().toISOString()}];await save('attendance',id,{sid,date:d,st,course:stu(sid).course,hist:h})}
+let AM=T().slice(0,7),AC='';
+function attMonth(m){const sc=document.querySelector('.ag')?.parentElement.scrollLeft||0;const [y,mo]=AM.split('-').map(Number),nd=new Date(y,mo,0).getDate(),days=[...Array(nd)].map((_,i)=>AM+'-'+String(i+1).padStart(2,'0'));
+ const isSun=d=>new Date(y,mo-1,+d.slice(8)).getDay()==0,wd=days.filter(d=>!isSun(d)),sn=nd-wd.length;const L=D.students.filter(s=>s.status=='Active'&&(!AC||s.course==AC)),A={};D.attendance.forEach(a=>{if(a.date.startsWith(AM))A[a.id]=a.st});
+ m.innerHTML=`<h2>Monthly Attendance</h2><div class="c bar np"><input type="month" value="${AM}" onchange="AM=this.value||AM;R()"><select onchange="AC=this.value;R()"><option value="">All courses</option>${D.courses.map(c=>`<option value="${c.id}" ${AC==c.id?'selected':''}>${E(c.name)}</option>`).join('')}</select><button class="b" onclick="print()">Print</button></div><div class="c"><p style="font-size:12px;color:var(--mu)">Click a box: P (Present) → A (Absent) → L (Leave) → blank. Click a day number to mark everyone Present that day. Saved automatically. Sundays are holidays.</p><p><b>Academy working days this month: ${wd.length}</b> (${nd} days − ${sn} Sundays)</p><div class="w"><table class="ag"><tr><th>Student</th>${days.map((d,i)=>`<th ${isSun(d)?'':`onclick="allP('${d}')"`} ${new Date(y,mo-1,i+1).getDay()==0?'style="color:var(--rd)"':''}>${i+1}<br><small>${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(y,mo-1,i+1).getDay()]}</small></th>`).join('')}<th>Present</th><th>Absent</th><th>Leave</th><th>Holidays (Sun)</th><th>%</th></tr>${L.map(s=>{const k=z=>wd.filter(d=>A[d+'_'+s.id]==z).length,p=k('Present'),a=k('Absent'),l=k('Leave'),t=p+a+l;return `<tr><td>${E(s.name)}</td>${days.map(d=>{if(isSun(d))return '<td style="background:var(--bd);color:var(--mu);font-size:10px">off</td>';const v=A[d+'_'+s.id]||'';return `<td><button class="${v?v[0]:''}" onclick="cyc('${s.id}','${d}')">${v?v[0]:''}</button></td>`}).join('')}<td><b>${p}</b>/${wd.length}</td><td>${a}</td><td>${l}</td><td>${sn}</td><td>${wd.length?Math.round(p/wd.length*100):0}%</td></tr>`}).join('')||'<tr><td>No active students.</td></tr>'}</table></div></div>`;const w=document.querySelector('.ag')?.parentElement;if(w)w.scrollLeft=sc}
+async function putAtt(sid,date,st){const id=date+'_'+sid,old=D.attendance.find(a=>a.id==id);await save('attendance',id,{sid,date,st,course:stu(sid).course,hist:[...(old?.hist||[]),{st:old?.st||'',at:new Date().toISOString()}]})}
+function cyc(sid,d){const o=D.attendance.find(a=>a.id==d+'_'+sid)?.st||'';putAtt(sid,d,{'':'Present',Present:'Absent',Absent:'Leave',Leave:''}[o])}
+async function allP(d){if(!confirm('Mark all shown students Present on '+d+'?'))return;for(const s of D.students.filter(s=>s.status=='Active'&&(!AC||s.course==AC)))await putAtt(s.id,d,'Present')}
+function fees(m){m.innerHTML=`<h2>Fees</h2><div class="c"><h3>Receive Payment</h3><div class="f"><div><label>Student</label><select id="p_s">${D.students.map(s=>`<option value="${s.id}">${s.id} – ${E(s.name)} (due ${Rs(rem(s))})</option>`).join('')}</select></div><div><label>Amount</label><input id="p_a" type="number" min="1"></div><div><label>Date</label><input id="p_d" type="date" value="${T()}"></div><div><label>Method</label><select id="p_m"><option>Cash</option><option>Bank</option><option>Easypaisa</option><option>JazzCash</option></select></div></div><p><button class="b" onclick="pay()">Save & Receipt</button></p></div>
+ <div class="c"><h3>Payment History</h3>${table(['Receipt','Student','Date','Method','Amount',''],[...D.payments].sort((a,b)=>b.date.localeCompare(a.date)).map(p=>[p.id,E(stu(p.sid).name),p.date,p.method,Rs(p.amount),`<button class="b o" onclick="receipt('${p.id}')">Receipt</button>`]))}</div>`}
+async function pay(){const sid=$('#p_s').value,a=N($('#p_a').value),s=stu(sid);if(!sid||a<=0)return alert('Enter a valid amount');if(a>rem(s))return alert('Amount exceeds remaining fee ('+Rs(rem(s))+')');
+ const id=nextId('payments','RCP-',5);await save('payments',id,{sid,amount:a,date:$('#p_d').value,method:$('#p_m').value,total:fin(s),before:rem(s)});setTimeout(()=>receipt(id),400)}
+function receipt(id){const p=D.payments.find(x=>x.id==id);if(!p)return;const s=stu(p.sid),w=document.createElement('div');w.id='rc';w.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:9';
+ w.innerHTML=`<div class="c" style="width:min(420px,95vw);background:#fff;color:#000"><h2 style="text-align:center;margin:0">Malka Hans Digital Academy</h2><p style="text-align:center">Fee Receipt</p><hr>${[['Receipt No',p.id],['Student',s.name],['Student ID',s.id],['Course',crs(s.course).name],['Payment Date',p.date],['Method',p.method],['Total Fee',Rs(p.total)],['Amount Paid',Rs(p.amount)],['Remaining Fee',Rs(p.before-p.amount)]].map(r=>`<p style="display:flex;justify-content:space-between;margin:6px 0"><span>${r[0]}</span><b>${E(r[1])}</b></p>`).join('')}<p class="np"><button class="b" onclick="print()">Print</button> <button class="b o" onclick="this.closest('#rc').remove()">Close</button></p></div>`;document.body.appendChild(w)}
+function pending(m){const f=$('#pf')?.value||'all',cid=$('#pc')?.value||'';
+ const L=D.students.filter(s=>rem(s)>0&&(!cid||s.course==cid)&&(f=='all'||(f=='part'?paid(s.id)>0:paid(s.id)==0)));
+ m.innerHTML=`<h2>Pending Fees</h2><div class="c bar"><select id="pf" onchange="R()">${[['all','All Pending'],['part','Partial Payment'],['none','Unpaid']].map(o=>`<option value="${o[0]}" ${f==o[0]?'selected':''}>${o[1]}</option>`).join('')}</select><select id="pc" onchange="R()"><option value="">All courses</option>${D.courses.map(c=>`<option value="${c.id}" ${cid==c.id?'selected':''}>${E(c.name)}</option>`).join('')}</select></div>
+ <div class="c">${table(['Student','Father','Phone','Course','Total','Paid','Remaining','Last Payment'],L.map(s=>[E(s.name),E(s.father),E(s.mobile),E(crs(s.course).name),Rs(fin(s)),Rs(paid(s.id)),`<span class="red">${Rs(rem(s))}</span>`,lastPay(s.id)]))}<p><b>Total pending: ${Rs(L.reduce((a,s)=>a+rem(s),0))}</b></p></div>`}
+function expenses(m){const t=T(),sum=p=>D.expenses.filter(e=>e.date.startsWith(p)).reduce((a,e)=>a+N(e.amount),0);
+ m.innerHTML=`<h2>Expenses</h2><div class="g"><div class="c s"><b>${Rs(sum(t))}</b><span>Today</span></div><div class="c s"><b>${Rs(sum(t.slice(0,7)))}</b><span>This Month</span></div><div class="c s"><b>${Rs(sum(t.slice(0,4)))}</b><span>This Year</span></div></div>
+ <div class="c"><div class="f"><div><label>Title</label><input id="e_t"></div><div><label>Category</label><select id="e_c"><option>Rent</option><option>Salary</option><option>Electricity</option><option>Internet</option><option>Equipment</option><option>Other</option></select></div><div><label>Amount</label><input id="e_a" type="number"></div><div><label>Date</label><input id="e_d" type="date" value="${t}"></div><div><label>Description</label><input id="e_x"></div></div><p><button class="b" onclick="addExp()">Add Expense</button></p></div>
+ <div class="c">${table(['Date','Title','Category','Amount','Description',''],[...D.expenses].sort((a,b)=>b.date.localeCompare(a.date)).map(e=>[e.date,E(e.title),e.category,Rs(e.amount),E(e.desc),`<button class="b r" onclick="del('expenses','${e.id}')">Del</button>`]))}</div>`}
+async function addExp(){const a=N($('#e_a').value);if(!$('#e_t').value.trim()||a<=0)return alert('Title and amount required');await save('expenses',nextId('expenses','EXP-',5),{title:$('#e_t').value,category:$('#e_c').value,amount:a,date:$('#e_d').value,desc:$('#e_x').value});go('exp')}
+function reports(m){const r=view||'adm',mo=$('#rm')?.value||T().slice(0,7);
+ const inc=D.payments.filter(p=>p.date.startsWith(mo)),ex=D.expenses.filter(e=>e.date.startsWith(mo)),ti=inc.reduce((a,p)=>a+N(p.amount),0),te=ex.reduce((a,e)=>a+N(e.amount),0);
+ const RP={adm:['Admissions',['ID','Name','Course','Admission'],D.students.map(s=>[s.id,s.name,crs(s.course).name,s.adm])],
+ cw:['Course-wise Students',['Course','Students'],D.courses.map(c=>[c.name,D.students.filter(s=>s.course==c.id).length])],
+ att:['Attendance (month)',['Student','Present','Absent','Leave','%'],D.students.map(s=>{const a=D.attendance.filter(x=>x.sid==s.id&&x.date.startsWith(mo)),k=z=>a.filter(x=>x.st==z).length;return[s.name,k('Present'),k('Absent'),k('Leave'),a.length?Math.round(k('Present')/a.length*100)+'%':'0%']})],
+ fc:['Fee Collection (month)',['Receipt','Student','Date','Method','Amount'],inc.map(p=>[p.id,stu(p.sid).name,p.date,p.method,N(p.amount)])],
+ pf:['Pending Fees',['Student','Course','Remaining'],D.students.filter(s=>rem(s)>0).map(s=>[s.name,crs(s.course).name,rem(s)])],
+ ex:['Expenses (month)',['Date','Title','Category','Amount'],ex.map(e=>[e.date,e.title,e.category,N(e.amount)])],
+ pl:['Profit / Loss (month)',['Income','Expenses','Profit/Loss'],[[ti,te,ti-te]]]}[r];
+ m.innerHTML=`<h2>Reports</h2><div class="c bar np"><select onchange="view=this.value;R()">${[['adm','Admissions'],['cw','Course-wise'],['att','Monthly Attendance'],['fc','Fee Collection'],['pf','Pending Fees'],['ex','Expenses'],['pl','Profit / Loss']].map(o=>`<option value="${o[0]}" ${r==o[0]?'selected':''}>${o[1]}</option>`).join('')}</select><input type="month" id="rm" value="${mo}" onchange="R()"><button class="b" onclick="print()">Print / PDF</button><button class="b o" onclick='exportXls("${RP[0]}",${JSON.stringify(RP[1])},${JSON.stringify(RP[2])})'>Excel (CSV)</button></div><div class="c"><h3>Malka Hans Digital Academy – ${RP[0]}</h3>${table(RP[1],RP[2])}</div>`}
+(async()=>{nav();db=await claude.use('db');if(!db){$('#m').innerHTML='<div class="c">Database not available. Open this artifact signed in to claude.ai.</div>';return}
+ let ready=0;const t=setTimeout(()=>{if(!ready)R()},10000);
+ Object.keys(D).forEach(k=>db.collection(k).onSnapshot(s=>{D[k]=s.docs.map(d=>({id:d.id,...d.data()}));ready=1;if(k=='courses'&&!s.size&&!window.sd){window.sd=1;loadDef()}if(k=='courses'&&!window.mg){const a=D.courses.find(c=>c.id=='C01'),b=D.courses.some(c=>c.id=='C02');if(a&&(a.name=='Physical Computer Course'||b)){window.mg=1;(async()=>{try{if(a.name=='Physical Computer Course')await db.collection('courses').doc('C01').update({name:'Computer Course',desc:'Basic Computer, MS Word, MS Excel, Urdu Typing and English Typing'});for(const s of D.students.filter(s=>s.course=='C02'))await db.collection('students').doc(s.id).update({course:'C01'});if(b)await db.collection('courses').doc('C02').delete()}catch(e){console.error(e)}})()}}if(k=='courses'){const c=D.courses.find(c=>c.id=='C02');if(c&&c.name=='MS Word, MS Excel, Urdu Typing and English Typing')db.collection('courses').doc('C02').update({name:'MS Office & Typing',desc:'MS Word, MS Excel, Urdu Typing and English Typing'})}if(!document.querySelector('#rc')&&!['f_name'].some(i=>$('#'+i)))R()},e=>console.error(k,e)));R()})();
+</script></body></html>
